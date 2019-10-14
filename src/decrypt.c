@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
 	}
 	fin = fopen(infile,"rb");
 	if(fin == NULL){
-		perror("can't open the input file");
+		perror("[x] Can't open the input file");
 		return -1;
 	}
 	fseek(fin, 0L, SEEK_END);
@@ -36,19 +36,17 @@ int main(int argc, char* argv[]){
 	fclose(fin);
 	data = xxtea_decrypt(buf + signlen, size - signlen, KEY, keylen, &retlen);
 	if(data == NULL){
-		printf("%s decrypt fail\n", infile);
+		printf("[x] Failed to decrypt: %s\n", infile);
 		return -1;
 	}
 	fout = fopen(outfile, "wb+");
 	if(fout == NULL){
-		perror("can't open the output file");
+		perror("[x] Can't open the output file");
 		return -1;
 	}
 	fwrite(data, retlen, 1, fout);
 	fclose(fout);
 	free(data);
-	printf("%s decrypted successfully\n", infile);
+	printf("[*] File decrypted successfully: %s\n", infile);
 	return 0;
 }
-
-	
