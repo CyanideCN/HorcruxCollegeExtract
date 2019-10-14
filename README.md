@@ -8,13 +8,13 @@
 gcc src\decrypt.c src\xxtea.c -o decrypt
 ```
 
-提取PNG
+提取文件
 
 ```
 decrypt [infile] [outfile]
 ```
 
-`decrypt.py`是一个基于此程序的简单封装，可以批量解码图片。
+`decrypt.py`是一个基于此程序的简单封装，可以批量解码文件。
 
 ```
 python decrypt.py [file / directory]
