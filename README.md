@@ -14,4 +14,12 @@ gcc src\decrypt.c src\xxtea.c -o decrypt
 decrypt [infile] [outfile]
 ```
 
-更多功能正在添加中！
+`decrypt.py`是一个基于此程序的简单封装，可以批量解码图片。
+
+```
+python decrypt.py [file / directory]
+```
+
+## 参考资料
+
+https://www.52pojie.cn/thread-594286-1-1.html

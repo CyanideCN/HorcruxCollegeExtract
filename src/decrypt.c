@@ -3,8 +3,8 @@
 #include <string.h>
 #include "xxtea.h"
 
-char *KEY = "bogehcollege";
-char *SIGN = "palmpi";
+char *KEY = "palmpi";
+char *SIGN = "bogehcollege";
 
 int main(int argc, char* argv[]){
 	FILE *fin, *fout;
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]){
 	fwrite(data, retlen, 1, fout);
 	fclose(fout);
 	free(data);
-	printf("%s decrypt successful\n", infile);
+	printf("%s decrypted successfully\n", infile);
 	return 0;
 }
 
